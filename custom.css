@@ -139,6 +139,10 @@ a:hover {
 	color: #E3920D;
 	text-decoration: underline;
 }
+a:hover {
+	color: #E3920D;
+	text-decoration: underline;
+}
 .hero-text {
   text-align: left;
   position: absolute;
