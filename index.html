@@ -47,24 +47,28 @@
 </header>
 <main>
 <!--About-->
-	<!-- MOCKUP: replaces the old spacer-column row (col-lg-1/col-sm-1/
-	     col-xs-2 left gutter, col-lg-2/col-sm-1/col-xs-2 right gutter,
-	     plus the two dead mobile-only spacers) with a single centered
-	     container and a two-column flex layout. One breakpoint instead
-	     of tracking column sums across lg/sm/xs separately. -->
+	<!-- Same label-column + centered-content-column grid as Research/CV
+	     below (.about-layout mirrors .research-grid/.cv-grid). The
+	     photo+bio pair keeps its own internal flex row (.about-grid)
+	     for "photo left, text right" -- it just now lives inside the
+	     grid's content column (grid-column: 2) instead of being the
+	     outermost layout itself. -->
 	<div class="about-section">
 		<a name="#about"></a>
-		<div class="about-grid">
-			<div class="about-photo">
-				<img class="img-fluid rounded-lg" src="Images/headshot_1000.jpg" alt="Photo of Ryan" data-aos="fade-up" data-aos-once="true">
-			</div>
-			<div class="about-bio" data-aos="fade-up" data-aos-once="true">
-				<p>I am a fourth-year PhD student in Economics at Princeton University.</p>
-				<p>Prior to Princeton, I was a predoctoral research fellow at the Stanford Institute for Economic Policy Research (SIEPR), where I worked with Professor Heidi Williams. I received my BA in Economics, Mathematics, and Mathematical Methods in the Social Sciences (MMSS) from Northwestern University in 2020.</p>
-				<p>My primary research interests are in applied econometrics and labor.</p>
-				<p>
-					<a href="mailto:ryan.broll@princeton.edu">Email<i class="bi bi-arrow-up-right-square ml-1 mr-3" style="color: #0000FF; font-size: 1rem" data-aos="fade-up" data-aos-once="true"></i></a><a href="https://www.linkedin.com/in/ryan-broll/" target="_blank">LinkedIn<i class="bi bi-arrow-up-right-square ml-1" style="color: #0000FF; font-size: 1rem" data-aos="fade-up" data-aos-once="true"></i></a>
-				</p>
+		<div class="about-layout">
+			<h1 class="about-heading" data-aos="fade-up" data-aos-once="true">About</h1>
+			<div class="about-grid">
+				<div class="about-photo">
+					<img class="img-fluid rounded-lg" src="Images/headshot_1000.jpg" alt="Photo of Ryan" data-aos="fade-up" data-aos-once="true">
+				</div>
+				<div class="about-bio" data-aos="fade-up" data-aos-once="true">
+					<p>I am a fifth-year PhD student in Economics at Princeton University.</p>
+					<p>Prior to Princeton, I was a predoctoral research fellow at the Stanford Institute for Economic Policy Research (SIEPR), where I worked with Professor Heidi Williams. I received my BA in Economics, Mathematics, and Mathematical Methods in the Social Sciences (MMSS) from Northwestern University in 2020.</p>
+					<p>My primary research interests are in applied econometrics and labor.</p>
+					<p>
+						<a href="mailto:ryan.broll@princeton.edu">Email<i class="bi bi-arrow-up-right-square ml-1 mr-3" style="color: #0000FF; font-size: 1rem" data-aos="fade-up" data-aos-once="true"></i></a><a href="https://www.linkedin.com/in/ryan-broll/" target="_blank">LinkedIn<i class="bi bi-arrow-up-right-square ml-1" style="color: #0000FF; font-size: 1rem" data-aos="fade-up" data-aos-once="true"></i></a>
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -180,7 +184,7 @@
 			<div class="vspace2em"></div>
             <p>Ryan J. Broll</p>
             <p>ryan.broll@princeton.edu</p>
-			<p>&copy; Ryan Broll 2025</p>
+			<p>&copy; Ryan Broll 2026</p>
 			<div class="vspacehalfem"></div>
         </div>
     </div>
