@@ -202,3 +202,68 @@ section {
 		max-width: 220px;
 	}
 }
+/*
+ * Same centered-grid pattern as .about-section, for sections shaped
+ * like "a label on the left, a column of content on the right"
+ * instead of "two things side by side" -- Research and CV both fit
+ * this, just with a different number of stacked items inside.
+ */
+.research-section,
+.cv-section {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 6rem 2rem 3rem;
+}
+.research-grid,
+.cv-grid {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+	column-gap: 2.5rem;
+	row-gap: 2.5rem;
+}
+.research-heading,
+.cv-heading {
+	grid-column: 1;
+	margin: 0;
+}
+.research-list,
+.cv-body {
+	grid-column: 2;
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+}
+@media (max-width: 767.98px) {
+	.research-grid,
+	.cv-grid {
+		grid-template-columns: 1fr;
+	}
+	.research-heading,
+	.cv-heading {
+		grid-column: 1;
+	}
+	.research-list,
+	.cv-body {
+		grid-column: 1;
+	}
+}
+.cv-subsection h2 {
+	margin-bottom: 0.75rem;
+}
+.cv-entry {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 1.5rem;
+	margin-bottom: 0.75rem;
+}
+.cv-entry-date {
+	flex-shrink: 0;
+	white-space: nowrap;
+}
+@media (max-width: 575.98px) {
+	.cv-entry {
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+}
