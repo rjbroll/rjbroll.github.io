@@ -39,38 +39,17 @@ h4 {
     color: #FFFFFF !important;
 	text-decoration: none !important;
 }
-.navbar-text {
-    font-family: 'Source Sans 3', sans-serif;
-    font-style: normal;
-    font-size: 1.2rem;
-	color: #000000 !important;
-	text-decoration: none !important;
-}
-.navbar-nav {
-	font-size: 1.2rem;
-	color: #000000 !important;
-	text-decoration: none !important;
-}
-.nav-item {
-	text-decoration: none !important;
-}
 .nav-link {
 	text-decoration: none !important;
+	color: #FFFFFF;
+	font-family: "Source Sans 3", sans-serif;
+	font-size: .9rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
 }
 .navbar-custom {
 	background-color: #000000;
-}
-.dropdown-item:hover {
-	background-color: #625079 !important;
-	color: #D2AFD4 !important;
-	text-decoration: none !important;
-}
-.dropdown-divider {
-	border-top: 1px solid #625079 !important;
-}
-.dropdown-menu {
-	background-color: #0a2243;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 div.vspacehalfem {
     clear: both;
@@ -108,7 +87,7 @@ footer {
     color: #FFFFFF;
 }
 #navbartext {
-	color: #000000;
+	color: #E3920D;
 }
 .btn-primary, .btn-primary:visited {
     background-color: #0a2243 !important;
