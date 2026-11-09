@@ -156,3 +156,114 @@ section {
 	margin: 0rem;
 	overflow: auto;
 }
+/*
+ * MOCKUP: a centered-container + two-column flex layout for the About
+ * section, replacing the old spacer-column Bootstrap row (which
+ * tracked separate lg/sm/xs column sums to fake centering, and whose
+ * xs sums didn't even add up to 12). Sizing now lives in exactly two
+ * values (.about-photo's flex-basis, .about-bio's flex-basis) instead
+ * of four HTML classes per element across three breakpoints.
+ */
+.about-section {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 9rem 2rem 3rem;
+}
+.about-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2.5rem;
+	align-items: flex-start;
+}
+.about-photo {
+	flex: 0 0 300px;
+	max-width: 300px;
+}
+.about-photo img {
+	display: block;
+	width: 100%;
+	border-radius: 0.75rem;
+}
+.about-bio {
+	flex: 1 1 420px;
+	min-width: 0;
+	text-align: left;
+}
+.about-bio p {
+	margin-bottom: 1rem;
+}
+@media (max-width: 575.98px) {
+	.about-grid {
+		flex-direction: column;
+		align-items: center;
+	}
+	.about-photo {
+		flex: 0 0 auto;
+		max-width: 220px;
+	}
+}
+/*
+ * Same centered-grid pattern as .about-section, for sections shaped
+ * like "a label on the left, a column of content on the right"
+ * instead of "two things side by side" -- Research and CV both fit
+ * this, just with a different number of stacked items inside.
+ */
+.research-section,
+.cv-section {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 6rem 2rem 3rem;
+}
+.research-grid,
+.cv-grid {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+	column-gap: 2.5rem;
+	row-gap: 2.5rem;
+}
+.research-heading,
+.cv-heading {
+	grid-column: 1;
+	margin: 0;
+}
+.research-list,
+.cv-body {
+	grid-column: 2;
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+}
+@media (max-width: 767.98px) {
+	.research-grid,
+	.cv-grid {
+		grid-template-columns: 1fr;
+	}
+	.research-heading,
+	.cv-heading {
+		grid-column: 1;
+	}
+	.research-list,
+	.cv-body {
+		grid-column: 1;
+	}
+}
+.cv-subsection h2 {
+	margin-bottom: 0.75rem;
+}
+.cv-entry {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 1.5rem;
+	margin-bottom: 0.75rem;
+}
+.cv-entry-date {
+	flex-shrink: 0;
+	white-space: nowrap;
+}
+@media (max-width: 575.98px) {
+	.cv-entry {
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+}
