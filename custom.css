@@ -4,6 +4,9 @@ p, body {
 	font-style: normal;
 	font-size: 1rem;
 }
+body {
+	background-color: #F5F5F4;
+}
 h1, h2 {
 	font-family: "Source Sans 3", sans-serif;
 	font-weight: 400;
@@ -203,28 +206,36 @@ section {
 	}
 }
 /*
- * Same centered-grid pattern as .about-section, for sections shaped
- * like "a label on the left, a column of content on the right"
- * instead of "two things side by side" -- Research and CV both fit
- * this, just with a different number of stacked items inside.
+ * Same "small marginal label + centered content column" pattern as
+ * emmahealy.com's Experience/About sections: a tiny uppercase label
+ * sits in the left gutter (grid-column 1) while the actual content
+ * lives in a narrower column capped at 38rem and centered across the
+ * full section width -- symmetric minmax(0,1fr) gutters on both
+ * sides -- rather than pinned to one side like the old title-column-
+ * plus-wide-right-column layout.
  */
 .research-section,
 .cv-section {
 	max-width: 1100px;
 	margin: 0 auto;
-	padding: 6rem 2rem 3rem;
+	padding: 3rem 2rem;
 }
 .research-grid,
 .cv-grid {
 	display: grid;
-	grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-	column-gap: 2.5rem;
-	row-gap: 2.5rem;
+	grid-template-columns: minmax(0, 1fr) min(38rem, 100%) minmax(0, 1fr);
+	column-gap: 0;
 }
 .research-heading,
 .cv-heading {
 	grid-column: 1;
 	margin: 0;
+	font-family: "Source Sans 3", sans-serif;
+	font-size: 0.78rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: rgba(0, 0, 0, 0.55);
 }
 .research-list,
 .cv-body {
@@ -241,6 +252,7 @@ section {
 	.research-heading,
 	.cv-heading {
 		grid-column: 1;
+		margin-bottom: 1.5rem;
 	}
 	.research-list,
 	.cv-body {
@@ -266,4 +278,25 @@ section {
 		flex-direction: column;
 		gap: 0.25rem;
 	}
+}
+/*
+ * Full-bleed horizontal rule between sections, storiedcolors-style --
+ * true edge-to-edge regardless of any ancestor's own max-width/
+ * centering, via the standard calc(50% - 50vw) negative-margin trick.
+ * Only works as a plain block-level child, not nested inside a flex
+ * .row (Bootstrap's .row is display:flex, which breaks the trick) --
+ * it sits directly in <main> here, same as the section wrappers above.
+ */
+.section-divider {
+	width: auto;
+	height: 1px;
+	margin: 3rem calc(50% - 50vw);
+	padding: 0;
+	background-color: rgba(0, 0, 0, 0.12);
+	border: none;
+}
+/* Guards against the 100vw used by the trick above including the
+   scrollbar gutter on non-overlay-scrollbar browsers. */
+body {
+	overflow-x: hidden;
 }
